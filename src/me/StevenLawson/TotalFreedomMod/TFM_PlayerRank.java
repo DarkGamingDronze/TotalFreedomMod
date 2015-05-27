@@ -9,6 +9,11 @@ import org.bukkit.entity.Player;
 public enum TFM_PlayerRank
 {
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
+    FOUNDER("The " + ChatColor.BLUE + "Owner and Founder of UltraRedFreedom", ChatColor.BLUE + "[Owner + Founder]"),
+    URFM_CREATOR("the " + ChatColor.DARK_PURPLE + "UltraRedFreedomMod creator and a System-Admin!", ChatColor.DARK_PURPLE + "[URFM-Creator]"),
+    CHIEF_OF_SECURITY("the " + ChatColor.RED + "Chief of security", ChatColor.RED + "[Chief of Security]"),
+    SYS_ADMIN("a " + ChatColor.DARK_RED + "System admin", ChatColor.DARK_RED + "[Sys-Admin]"),
+    SPEC_EXCUT("a " + ChatColor.BLUE + "Special-Excuter", ChatColor.BLUE + "[Spec-Excut]"),
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
@@ -63,6 +68,16 @@ public enum TFM_PlayerRank
         if (TFM_AdminList.isAdminImpostor((Player) sender))
         {
             return IMPOSTOR;
+        }
+        
+        if (URFM_CREATOR.contains(sender.getName()))
+        {
+            return URFM_CREATOR;
+        }
+        
+        if (FOUNDER.contains(sender.getName()))
+        {
+            return FOUNDER;
         }
 
         if (DEVELOPERS.contains(sender.getName()))
